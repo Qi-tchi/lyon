@@ -1,0 +1,17 @@
+# Build artifacts
+/_build/
+/_build/
+/*.install
+*.o
+*.cmo
+*.cmi
+*.cmx
+*.cmt
+*.cmti
+*.annot
+*.byte
+*.native
+
+# MacOS-specific
+.DS_Store
+

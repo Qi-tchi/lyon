@@ -1,0 +1,6 @@
+(library
+  (name lyon)
+  (public_name lyon)  ; The name of the library when installed
+  (libraries batteries unix )     ; List of dependencies if needed
+  (preprocess (pps ppx_jane ppx_inline_test ppx_assert ppx_expect))  ; Preprocessing if needed
+)
