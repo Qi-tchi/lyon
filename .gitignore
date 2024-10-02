@@ -1,0 +1,38 @@
+# Build artifacts
+/_build/
+/_build/
+/*.install
+*.o
+*.cmo
+*.cmi
+*.cmx
+*.cmt
+*.cmti
+*.annot
+*.byte
+*.native
+
+# Dune-related files
+/dune-project
+/dune-workspace
+/.merlin
+
+# OPAM-related files
+*.opam
+
+# Editor-related files
+*.swp
+*.swo
+*~
+
+# MacOS-specific
+.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Binaries
+*.exe
+*.out
+
