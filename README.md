@@ -46,7 +46,11 @@ To use this software, follow these steps:
    let isTerminating = Lyon.Termination.isTerminating
    let interp = Lyon.Termination.interpret
    ```
-3. **Test an example**:
+3. **Print a graph rewriting system**:
+   ```ocaml
+   let _ = print_grs ex3
+   ```
+4. **Test an example**:
    To check whether a graph rewriting system is terminating, you can call the `isTerminating` method on any of the loaded examples. For instance, to test `ex4`:
 
    ```ocaml
