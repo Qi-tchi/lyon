@@ -646,3 +646,7 @@ let%expect_test "isTerminating" =
   let pb = pbFromList [grs_ex69_variant_r1] in
   pb |> isTerminatingBool |> Printf.printf "[grs_grs_ex69_variant_r1ex69_r1] is terminating : %b";
   ;[%expect{| [grs_grs_ex69_variant_r1ex69_r1] is terminating : true |}]
+
+let print_grs pb = List.iteri 
+    (fun i rl -> Printf.printf "rule %d : \n %s" i (rl |> GraphRewritingSystem.toStr_left_interface_right))
+    (pb.rules |> GraphRewritingSystem.RuleSet.elements)

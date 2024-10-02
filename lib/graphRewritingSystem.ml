@@ -79,6 +79,9 @@ module DPOrule = struct
     let toStr rl = 
       Printf.sprintf "left:\n%s\nright:\n%s" 
       (lhs rl |> Homo.toStr) (rhs rl |> Homo.toStr) 
+    let toStr_left_interface_right rl = 
+      Printf.sprintf "left:\n%s\n\nInterface\n%s\n\nright:\n%s" 
+      (lhs rl |> Homo.codom |> MGraph.toStr) (lhs rl |> Homo.dom |> MGraph.toStr) (rhs rl |> Homo.codom |> MGraph.toStr) 
     (* let fromGlsRule ({lhs;rhs}:Gls.Rule.t) =  
       let ug = lhs |> MGraph.unlabelled in 
       if (Ugraph.equal ug (rhs |> MGraph.unlabelled) |> not) then raise (Invalid_argument "left and right graphs should have the same unlabeled graph");
