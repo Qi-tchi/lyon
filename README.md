@@ -15,11 +15,12 @@ To use this software, ensure that you have installed:
 - [OCaml](https://ocaml.org/)
 - [Dune](https://dune.build/)
 - [utop](https://github.com/diml/utop) (for the OCaml REPL)
+- [Batteries](https://github.com/ocaml-batteries-team/batteries-included) (for utility functions)
 
 You can install the necessary dependencies via `opam`:
 
 ```bash
-opam install dune utop
+opam install dune utop batteries
 ```
 
 ## Getting Started
@@ -35,26 +36,25 @@ To use this software, follow these steps:
 2. **Load the examples and functions**:
    Once in the REPL, load the following examples and functions:
 
-   ```ocaml
-   let ex3 = Lyon.ConcretGraphRewritingSystems.bruggink_2014_example_4
-   let ex4 = Lyon.ConcretGraphRewritingSystems.grs_ex69
-   let ex12 = Lyon.ConcretGraphRewritingSystems.endrullis_2023_ex6_3
-   let ex13 = Lyon.ConcretGraphRewritingSystems.grs_ex69_variant
+   let ex18 = Lyon.ConcretGraphRewritingSystems.bruggink_2014_example_4
+   let ex19 = Lyon.ConcretGraphRewritingSystems.grs_ex69
+   let ex42 = Lyon.ConcretGraphRewritingSystems.endrullis_2023_ex6_3
+   let ex43 = Lyon.ConcretGraphRewritingSystems.grs_ex69_variant
 
    let print_grs = Lyon.Termination.print_grs
 
    let isTerminating = Lyon.Termination.isTerminating
    let interp = Lyon.Termination.interpret
-   ```
 3. **Print a graph rewriting system**:
-   ```ocaml
-   let _ = print_grs ex3
-   ```
-4. **Test an example**:
-   To check whether a graph rewriting system is terminating, you can call the `isTerminating` method on any of the loaded examples. For instance, to test `ex4`:
 
    ```ocaml
-   let res = isTerminating ex4
+   let _ = print_grs ex18
+   ```
+4. **Test an example**:
+   To check whether a graph rewriting system is terminating, you can call the `isTerminating` method on any of the loaded examples. For instance, to test `ex19`:
+
+   ```ocaml
+   let res = isTerminating ex19
    ```
 
    To interpret the result returned by the method, run:
@@ -72,16 +72,23 @@ dune utop lib
 ```
 
 ```ocaml
-let ex4 = Lyon.ConcretGraphRewritingSystems.grs_ex69;;
-let _ = print_grs ex4
+let ex19 = Lyon.ConcretGraphRewritingSystems.grs_ex69;;
+let _ = print_grs ex19
 
 let isTerminating = Lyon.Termination.isTerminating;;
 let interp = Lyon.Termination.interpret;;
-let res = isTerminating ex4;;
+let res = isTerminating ex19;;
 interp res;;
 ```
 
-The `interp` function will provide an interpretation of whether the system is terminating.
+## Preprocessing Requirements
+
+This project uses several preprocessors for code generation and testing:
+
+- `ppx_jane`
+- `ppx_inline_test`
+- `ppx_assert`
+- `ppx_expect`
 
 ## License
 
