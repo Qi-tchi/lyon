@@ -36,8 +36,8 @@ To use this software, follow these steps:
 2. **Load the examples and functions**:
    Once in the REPL, load the following examples and functions:
 
-   let ex18 = Lyon.ConcretGraphRewritingSystems.bruggink_2014_example_4
-   let ex19 = Lyon.ConcretGraphRewritingSystems.grs_ex69
+   let ex40 = Lyon.ConcretGraphRewritingSystems.bruggink_2014_example_4
+   let ex41 = Lyon.ConcretGraphRewritingSystems.grs_ex69
    let ex42 = Lyon.ConcretGraphRewritingSystems.endrullis_2023_ex6_3
    let ex43 = Lyon.ConcretGraphRewritingSystems.grs_ex69_variant
 
@@ -48,13 +48,13 @@ To use this software, follow these steps:
 3. **Print a graph rewriting system**:
 
    ```ocaml
-   let _ = print_grs ex18
+   let _ = print_grs ex40
    ```
 4. **Test an example**:
-   To check whether a graph rewriting system is terminating, you can call the `isTerminating` method on any of the loaded examples. For instance, to test `ex19`:
+   To check whether a graph rewriting system is terminating, you can call the `isTerminating` method on any of the loaded examples. For instance, to test `ex40`:
 
    ```ocaml
-   let res = isTerminating ex19
+   let res = isTerminating ex40
    ```
 
    To interpret the result returned by the method, run:
@@ -72,12 +72,12 @@ dune utop lib
 ```
 
 ```ocaml
-let ex19 = Lyon.ConcretGraphRewritingSystems.grs_ex69;;
-let _ = print_grs ex19
+let ex40 = Lyon.ConcretGraphRewritingSystems.grs_ex69;;
+let _ = print_grs ex40
 
 let isTerminating = Lyon.Termination.isTerminating;;
 let interp = Lyon.Termination.interpret;;
-let res = isTerminating ex19;;
+let res = isTerminating ex40;;
 interp res;;
 ```
 
